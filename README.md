@@ -77,6 +77,26 @@ Restart Claude Desktop and start asking about Apple APIs!
 
 ## 🤔 Which Should I Use?
 
+### Quick Decision Guide
+
+```
+Are you using Claude.ai web or Claude Code?
+│
+├─ YES → Use Custom Skill
+│         ✓ Easiest setup
+│         ✓ Just upload SKILL.md
+│         ✓ Works immediately
+│
+└─ NO → Are you using Claude Desktop, Cursor, or VS Code?
+         │
+         ├─ YES → Use MCP Server
+         │         ✓ Full integration
+         │         ✓ Works with multiple tools
+         │         ✓ Auto-updates via npm
+         │
+         └─ NO → Use Custom Skill (more portable)
+```
+
 ### Claude Custom Skill (Recommended for Claude.ai & Claude Code)
 **Best for**: Simple setup, Claude.ai web interface, Claude Code IDE
 
