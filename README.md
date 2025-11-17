@@ -249,49 +249,69 @@ npm install && npm run build
 
 ## 🤖 Claude Skill
 
-This repository includes a **Claude skill** that enhances Claude's ability to help with Apple platform development. The skill provides structured access to all MCP tools through a comprehensive knowledge base.
+This repository includes a **Claude skill** that enhances Claude's ability to help with Apple platform development using **direct Python code execution**. Unlike traditional MCP tools, this skill embeds complete Python implementations that Claude can execute directly.
 
-### What is a Claude Skill?
+### What is This Skill?
 
-A Claude skill is a specialized prompt that gives Claude expert knowledge in a specific domain. The `apple-docs` skill makes Claude an expert at navigating Apple Developer Documentation, WWDC content, and the Apple development ecosystem.
+A specialized Claude skill that provides expert knowledge for navigating Apple Developer Documentation through executable Python code. The skill includes complete implementations for fetching, parsing, and presenting Apple documentation without requiring external MCP servers.
 
-### Using the Skill
+### How It Works
 
-The skill is located in `.claude/skills/apple-docs.md` and is automatically available when using Claude Code or compatible Claude environments in this repository.
+The skill is located in `.claude/skills/apple-docs.md` and provides Claude with:
 
-With the skill activated, Claude can:
+1. **Complete Python Functions**: Ready-to-execute code for all documentation operations
+2. **Offline WWDC Data Access**: Direct file system access to 1,260+ videos (2014-2025)
+3. **HTTP Request Handling**: Proper Safari user-agents for Apple's APIs
+4. **JSON/HTML Parsing**: Extract structured data from Apple's documentation
 
-- Search and retrieve Apple Developer Documentation with enhanced context
-- Navigate framework hierarchies and API relationships
-- Access WWDC video transcripts and code examples (2014-2025, bundled offline)
-- Analyze platform compatibility across iOS, macOS, watchOS, tvOS, visionOS
-- Find similar APIs and alternatives
-- Browse sample code and implementation patterns
+### Capabilities
+
+With the skill activated, Claude can execute Python code to:
+
+- **Search Apple Documentation**: Find APIs, classes, methods, and frameworks
+- **Fetch Documentation Content**: Get detailed API docs with declarations and examples
+- **Browse Technologies**: List all Apple frameworks and technologies
+- **Access WWDC Content**: Search video transcripts and code examples (fully offline)
+- **Check Platform Compatibility**: Analyze API availability across all Apple platforms
+- **Parse Documentation**: Extract abstracts, declarations, parameters, and discussions
 
 ### Skill Features
 
-- **18 specialized MCP tools** organized into 4 categories:
-  - Core Documentation (4 tools)
-  - API Discovery (4 tools)
-  - Documentation Updates (3 tools)
-  - WWDC Videos (7 tools)
-- **Best practice patterns** for common development scenarios
-- **Offline WWDC access** to 1,260+ video transcripts and code examples
-- **Enhanced analysis options** for deep API exploration
+- **Pure Python Implementation**: No external dependencies beyond Python standard library
+- **Offline WWDC Access**: 35MB of bundled video data at `/home/user/apple-docs-mcp/data/wwdc/`
+- **Complete Functions**: 11 main functions + helpers for all documentation needs
+- **Safari User-Agents**: Optimal compatibility with Apple's developer site
+- **Error Handling**: Graceful degradation with clear error messages
+- **Transparent Execution**: See exactly what code Claude is running
 
 ### Example Queries with the Skill
 
 When the skill is active, you can ask Claude:
 
 ```
-"Find the SwiftUI List documentation with related APIs and platform compatibility"
-"Show me WWDC 2024 videos about async/await with code examples"
-"What are the modern alternatives to UIAlertView?"
-"Find sample code for Core ML model integration"
-"Analyze the platform availability of SwiftData APIs"
+"Find the SwiftUI List documentation"
+→ Claude executes: search_apple_docs() and get_doc_content()
+
+"Show me WWDC 2024 videos about async/await"
+→ Claude executes: list_wwdc_videos(year="2024") and search_wwdc_content()
+
+"What's the platform compatibility for SwiftData?"
+→ Claude executes: search_apple_docs() then get_platform_compatibility()
+
+"Search WWDC transcripts for Vision Pro features"
+→ Claude executes: search_wwdc_content("Vision Pro")
 ```
 
-For more information, see [.claude/README.md](.claude/README.md).
+### Advantages Over MCP
+
+- **No Server Required**: No MCP server to install or configure
+- **Faster Execution**: Direct code execution without tool routing
+- **Full Transparency**: Complete visibility into what code runs
+- **Easier Debugging**: See Python code and modify if needed
+- **Offline Capable**: WWDC data works without internet
+- **Portable**: Works anywhere Python is available
+
+For complete implementation details, see [.claude/README.md](.claude/README.md).
 
 ## 💬 Usage Examples
 
