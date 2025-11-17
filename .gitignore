@@ -10,6 +10,5 @@ coverage/
 *.swp
 *.swo
 *~
-.claude/
 .kiro/
 CLAUDE.md

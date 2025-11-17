@@ -247,6 +247,52 @@ npm install && npm run build
 
 </details>
 
+## 🤖 Claude Skill
+
+This repository includes a **Claude skill** that enhances Claude's ability to help with Apple platform development. The skill provides structured access to all MCP tools through a comprehensive knowledge base.
+
+### What is a Claude Skill?
+
+A Claude skill is a specialized prompt that gives Claude expert knowledge in a specific domain. The `apple-docs` skill makes Claude an expert at navigating Apple Developer Documentation, WWDC content, and the Apple development ecosystem.
+
+### Using the Skill
+
+The skill is located in `.claude/skills/apple-docs.md` and is automatically available when using Claude Code or compatible Claude environments in this repository.
+
+With the skill activated, Claude can:
+
+- Search and retrieve Apple Developer Documentation with enhanced context
+- Navigate framework hierarchies and API relationships
+- Access WWDC video transcripts and code examples (2014-2025, bundled offline)
+- Analyze platform compatibility across iOS, macOS, watchOS, tvOS, visionOS
+- Find similar APIs and alternatives
+- Browse sample code and implementation patterns
+
+### Skill Features
+
+- **18 specialized MCP tools** organized into 4 categories:
+  - Core Documentation (4 tools)
+  - API Discovery (4 tools)
+  - Documentation Updates (3 tools)
+  - WWDC Videos (7 tools)
+- **Best practice patterns** for common development scenarios
+- **Offline WWDC access** to 1,260+ video transcripts and code examples
+- **Enhanced analysis options** for deep API exploration
+
+### Example Queries with the Skill
+
+When the skill is active, you can ask Claude:
+
+```
+"Find the SwiftUI List documentation with related APIs and platform compatibility"
+"Show me WWDC 2024 videos about async/await with code examples"
+"What are the modern alternatives to UIAlertView?"
+"Find sample code for Core ML model integration"
+"Analyze the platform availability of SwiftData APIs"
+```
+
+For more information, see [.claude/README.md](.claude/README.md).
+
 ## 💬 Usage Examples
 
 ### 🔍 Smart Search
