@@ -1,9 +1,14 @@
-# Apple Docs MCP - Apple Developer Documentation Model Context Protocol Server
+# Apple Docs - Apple Developer Documentation for AI Assistants
 
 [![npm version](https://badge.fury.io/js/@kimsungwhee%2Fapple-docs-mcp.svg)](https://badge.fury.io/js/@kimsungwhee%2Fapple-docs-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Apple Developer Documentation MCP Server - Access Apple's official developer docs, frameworks, APIs, SwiftUI, UIKit, and WWDC videos through Model Context Protocol. Search iOS, macOS, watchOS, tvOS, and visionOS documentation with AI-powered natural language queries. Get instant access to Swift/Objective-C code examples, API references, and technical guides directly in Claude, Cursor, or any MCP-compatible AI assistant.
+Access Apple's official developer docs, frameworks, APIs, SwiftUI, UIKit, and WWDC videos through AI assistants. Available as both a **Claude Custom Skill** and **MCP Server** for maximum flexibility.
+
+**🎯 Claude Custom Skill**: Drop-in documentation skill for Claude.ai and Claude Code  
+**🔌 MCP Server**: Full integration for Claude Desktop, Cursor, VS Code, and more
+
+Search iOS, macOS, watchOS, tvOS, and visionOS documentation with AI-powered natural language queries. Get instant access to Swift/Objective-C code examples, API references, technical guides, and 1,260+ WWDC video transcripts.
 
 **English** | [日本語](README.ja.md) | [한국어](README.ko.md) | [简体中文](README.zh-CN.md)
 
@@ -26,7 +31,26 @@ Apple Developer Documentation MCP Server - Access Apple's official developer doc
 
 ## 🚀 Quick Start
 
-### Claude Desktop (Recommended)
+### 🎯 Claude Custom Skill (New!)
+
+The easiest way to use this in Claude! Add as a custom skill to get Apple Developer Documentation capabilities without MCP server configuration.
+
+**For Claude.ai:**
+1. Download or clone this repository
+2. In Claude.ai, go to your Projects settings
+3. Add a custom skill pointing to the `SKILL.md` file in this repository
+4. Start asking about Apple development!
+
+**For Claude Code:**
+1. Place the repository (or just `SKILL.md`) in your skills directory
+2. Claude Code will automatically discover and load the skill
+3. Ask: "What skills do you have?" to verify it's loaded
+
+[📖 Learn more about Claude Custom Skills](https://support.claude.com/en/articles/12512198-creating-custom-skills)
+
+---
+
+### Claude Desktop (MCP Server)
 
 Add this to your Claude Desktop configuration:
 
@@ -50,6 +74,56 @@ Add this to your Claude Desktop configuration:
 > ```
 
 Restart Claude Desktop and start asking about Apple APIs!
+
+## 🤔 Which Should I Use?
+
+### Quick Decision Guide
+
+```
+Are you using Claude.ai web or Claude Code?
+│
+├─ YES → Use Custom Skill
+│         ✓ Easiest setup
+│         ✓ Just upload SKILL.md
+│         ✓ Works immediately
+│
+└─ NO → Are you using Claude Desktop, Cursor, or VS Code?
+         │
+         ├─ YES → Use MCP Server
+         │         ✓ Full integration
+         │         ✓ Works with multiple tools
+         │         ✓ Auto-updates via npm
+         │
+         └─ NO → Use Custom Skill (more portable)
+```
+
+### Claude Custom Skill (Recommended for Claude.ai & Claude Code)
+**Best for**: Simple setup, Claude.ai web interface, Claude Code IDE
+
+✅ **Pros:**
+- Zero configuration - just drop in the SKILL.md file
+- Works immediately in Claude.ai Projects
+- Efficient context window usage (progressive loading)
+- Portable across Claude platforms
+- No npm/npx dependencies needed
+
+❌ **Cons:**
+- Claude.ai and Claude Code only
+- Limited to Claude's skill system
+
+### MCP Server (Recommended for Advanced Use)
+**Best for**: Claude Desktop, Cursor, VS Code, multiple AI clients
+
+✅ **Pros:**
+- Works with multiple AI assistants (Claude, Cursor, VS Code, etc.)
+- Full programmatic access to all features
+- Better for automation and integrations
+- npm package with automatic updates
+
+❌ **Cons:**
+- Requires configuration
+- Need Node.js/npx installed
+- Platform-specific setup
 
 ## 📦 Installation
 
