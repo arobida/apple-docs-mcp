@@ -1,7 +1,7 @@
 {
   "name": "@kimsungwhee/apple-docs-mcp",
   "version": "1.0.26",
-  "description": "MCP server for Apple Developer Documentation - Search iOS/macOS/SwiftUI/UIKit docs, WWDC videos, Swift/Objective-C APIs & code examples in Claude, Cursor & AI assistants",
+  "description": "Apple Developer Documentation for AI assistants - Available as Claude Custom Skill and MCP Server. Search iOS/macOS/SwiftUI/UIKit docs, 1260+ WWDC videos with transcripts, Swift/Objective-C APIs & code examples in Claude, Cursor & AI assistants",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
@@ -11,6 +11,8 @@
     "dist",
     "README.md",
     "README.*.md",
+    "SKILL.md",
+    "SKILL-*.md",
     "LICENSE"
   ],
   "repository": {
@@ -42,6 +44,8 @@
   },
   "keywords": [
     "mcp",
+    "claude-skill",
+    "custom-skill",
     "apple",
     "developer-documentation",
     "ios",
@@ -51,7 +55,10 @@
     "api-search",
     "framework-documentation",
     "sample-code",
-    "apple-apis"
+    "apple-apis",
+    "wwdc",
+    "swiftui",
+    "uikit"
   ],
   "author": "kimsungwhee",
   "license": "MIT",
